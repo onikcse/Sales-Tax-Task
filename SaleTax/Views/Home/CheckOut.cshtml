@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Your Shopping Cart";
+}
+<h1>@ViewData["Title"]</h1>
+
+@using SaleTax.Repository.Shopping
+@model ShoppingCart
+
+<h3>Total Item/s: @ViewBag.CartSize</h3>
+
+<div class="row checkoutForm">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Origin</th>
+                <th class="text-right">Quantity</th>
+                <th class="text-right">Unit Price</th>
+                <th class="text-right">SubTotal</th>
+                <th class="text-right">Taxed Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var cartItems = Model.GetItemsFromCart();
+                foreach (var product in cartItems)
+                {
+                        <tr>
+                            <td class="text-left">@product.Name</td>
+                            <td class="text-right">@product.IsImported</td>
+                            <td class="text-right">@product.Quantity</td>
+                            <td class="text-right">@((product.UnitPrice).ToString("c"))</td>
+                            <td class="text-right">@product.SubTotal.ToString("c")</td>
+                            <td class="text-right">@((product.TaxedCost).ToString("c"))</td>
+                            @*<td class="text-center"><a class="glyphicon glyphicon-remove text-danger remove">Remove</a></td>*@
+                        </tr>
+                    }
+                }
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total SalesTax:</td>
+                <td colspan="1" class="text-right">@Model.GetSalesTax()</td>
+                <td colspan="1" class="text-right">Total:</td>
+                <td colspan="1" class="text-right">@Model.GetTotalCost()</td>
+                @*<td></td>*@
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right align-right">
+        <div class="btn-group">
+            <a class="glyphicon glyphicon-remove text-danger remove" asp-area="" asp-controller="Home" asp-action="CheckOut" asp-route-clear="@true">Clear Cart</a>
+
+        </div>
+    </div>
+</div>

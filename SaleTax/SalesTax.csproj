@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'SaleTax' " />
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Data\Mock\" />
+    <Folder Include="Data\Interface\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Data\DatabaseHandler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="4.6.0" />
+    <PackageReference Include="MySql.Data" Version="8.0.23" />
+    <PackageReference Include="MySqlConnector" Version="1.2.1" />
+  </ItemGroup>
+</Project>

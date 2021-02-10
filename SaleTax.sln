@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.808.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTax", "SaleTax\SalesTax.csproj", "{709F189E-838D-465C-A293-3070D8D33C43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{709F189E-838D-465C-A293-3070D8D33C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709F189E-838D-465C-A293-3070D8D33C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709F189E-838D-465C-A293-3070D8D33C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709F189E-838D-465C-A293-3070D8D33C43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00A1A26F-8831-42C4-B1CF-F99A3A8BF3F7}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.StandardHeader = $2
+		$0.VersionControlPolicy = $3
+	EndGlobalSection
+EndGlobal

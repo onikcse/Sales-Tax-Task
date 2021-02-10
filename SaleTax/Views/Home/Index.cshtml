@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@using SaleTax.ViewModel
+@model ProductListViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+
+    <h3>Total Product Added:  @ViewBag.Count</h3>
+    <br/>
+    <div class="row">
+
+        @{
+            int i = 0;
+        }
+        @foreach (var line in Model.Products)
+        {
+            var img = Url.Content("https://picsum.photos/320");
+            if (i > 0 && i % 3 == 0)
+            {
+                @:</div><div class="row">
+            }
+
+                        <div class="container marginTop col-sm-3 col-lg-4 col-md-3">
+                            <div class="row">
+                                <div class="card">
+                                    <div class="text-center view overlay hm-white-slight">
+                                        <img src= @img width="320" height="320" class="img-fluid" alt="@line.Name Image">
+                                        <a href="#">
+                                            <div class="mask waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+
+
+                                    <div class="card-block">
+
+                                        <div>
+                                            <h4 class="card-title">@line.Name</h4>
+                                            <p class="card-text">@line.Price</p>
+
+                                        </div>
+
+
+                                        <p class="btn btn-group pull-right">
+                                            <a class="btn btn-success" id="cartButton"
+                                               asp-controller="Home" asp-action="AddToCart" asp-route-productName="@line.Name">
+                                                Add to Cart
+                                            </a>
+                                        </p>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div>
+                                <br />
+                            </div>
+                        </div>
+            <div>
+                <br />
+            </div>
+
+            i++;
+        }
+
+
+    </div>
+
+
+</div>
+
